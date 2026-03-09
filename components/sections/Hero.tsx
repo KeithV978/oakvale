@@ -56,7 +56,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-6 text-5xl md:text-6xl font-bold text-white"
+            className="mb-6 text-5xl md:text-6xl font-bold text-slate-100 leading-tight"
           >
             High-quality, globally relevant health and social care learning tailored for local success.
           </motion.h1>
@@ -66,7 +66,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-lg md:text-xl text-white mb-12 max-w-3xl leading-relaxed"
+            className="text-lg md:text-xl text-slate-200 mb-12 max-w-3xl leading-relaxed"
           >
             We partner with governments, NGOs, and healthcare providers across the Global South to
             provide evidence-based learning that builds skills, raises standards, and creates lasting
@@ -80,7 +80,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 items-center"
           >
-            <Link href="/partnership" className="btn-primary bg-white text-health-primary hover:bg-health-primary hover:text-white rounded-full">
+            <Link href="/partnership" className="btn-primary text-health-primary bg-slate-50  hover:bg-health-primary hover:text-white rounded-full">
               Discuss a Partnership
             </Link>
             <Link href="/solutions" className="btn-secondary bg-health-primary hover:bg-health-primary/90 text-white rounded-full">
