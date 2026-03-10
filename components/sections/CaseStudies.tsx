@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export default function CaseStudies() {
@@ -11,8 +12,8 @@ export default function CaseStudies() {
   const logos = [
     { name: 'EKOUnimed', url: '/ekounimed.png' },
     { name: 'UNILAG', url: '/UNILAG-LOGO.png' },
-    { name: 'Healthy Entrepreneurs Nigeria', url: 'https://via.placeholder.com/120x60?text=HEN' },
-    { name: 'Advantage Health Africa', url: 'https://via.placeholder.com/120x60?text=AHA' },
+    { name: 'Healthy Entrepreneurs Nigeria', url: '/healthy-entrepreneurs-nigeria.png' },
+    { name: 'Advantage Health Africa', url: '/advantage-health-africa.png' },
   ];
 
   const caseStudies = [
@@ -20,7 +21,7 @@ export default function CaseStudies() {
       title: 'Empowering Community Health Workers',
       excerpt:
         'Discover how our tailored curriculum and digital delivery model successfully upskilled a pilot cohort of 50 community health workers with Healthy Entrepreneurs Nigeria, paving the way for scalable state-wide health access.',
-      image: 'https://via.placeholder.com/400x250?text=Community+Health+Workers',
+      image: 'https://unsplash.com/photos/african-american-women-checking-boxes-of-pills-client-looking-to-buy-vitamins-and-supplements-in-pharmacy-pharmacist-and-clients-asking-about-prescription-medicine-pharmaceutics-O38-A4tQjm4',
     },
     {
       title: 'Advancing Clinical Leadership',
@@ -101,8 +102,10 @@ export default function CaseStudies() {
                 className="group bg-gray-50 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
               >
                 <div className="relative h-48 bg-gray-200 overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-teal-100 to-blue-100">
-                    <span className="text-gray-500 text-sm">Placeholder Image</span>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div style={{ backgroundImage: `url(${study.image})` }} className="h-full w-full object-cover">
+                    {/* <span className="text-gray-500 text-sm">Placeholder Image</span> */}
+                  </div>
                   </div>
                 </div>
                 <div className="p-6">
@@ -122,8 +125,11 @@ export default function CaseStudies() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-center"
           >
-            <Link href="/case-studies" className="btn-primary">
+            <Link href="/case-studies" className="inline-flex items-center gap-2 btn-primary bg-health-secondary hover:gap-3 transition-all">
               Read Our Case Studies
+              <motion.div whileHover={{ x: 4 }} transition={{ type: 'spring', stiffness: 300 }}>
+                <ArrowRight size={20} />
+              </motion.div>
             </Link>
           </motion.div>
         </motion.div>

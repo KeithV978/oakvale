@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ScrollToTop from '@/components/ScrollToTop';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export default function RootLayout({
         <Header />
         <main className="pt-16 md:pt-20">{children}</main>
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { Hospital, Users, GraduationCap } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export default function Challenges() {
@@ -51,7 +52,14 @@ export default function Challenges() {
             animate={isInView ? 'visible' : 'hidden'}
           >
             {/* Healthcare Providers */}
-            <motion.div variants={itemVariants} className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <motion.div variants={itemVariants} className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow group">
+              <motion.div
+                className="inline-flex items-center justify-center w-12 h-12 bg-health-primary/10 rounded-lg mb-4"
+                whileHover={{ scale: 1.1, rotate: -5 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 10 }}
+              >
+                <Hospital className="text-health-primary" size={24} />
+              </motion.div>
               <h3 className="text-2xl font-bold text-health-primary mb-4">For Healthcare Providers</h3>
               <p className="text-navy-900 leading-relaxed">
                 We help hospital founders and clinic owners standardise care quality, embed best
@@ -60,7 +68,14 @@ export default function Challenges() {
             </motion.div>
 
             {/* Governments & NGOs */}
-            <motion.div variants={itemVariants} className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <motion.div variants={itemVariants} className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow group">
+              <motion.div
+                className="inline-flex items-center justify-center w-12 h-12 bg-health-primary/10 rounded-lg mb-4"
+                whileHover={{ scale: 1.1, rotate: -5 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 10 }}
+              >
+                <Users className="text-health-primary" size={24} />
+              </motion.div>
               <h3 className="text-2xl font-bold text-health-primary mb-4">For Governments & NGOs</h3>
               <p className="text-navy-900 leading-relaxed">
                 We design and deploy mass training solutions that turn policy into practice, building
@@ -69,7 +84,14 @@ export default function Challenges() {
             </motion.div>
 
             {/* Universities */}
-            <motion.div variants={itemVariants} className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <motion.div variants={itemVariants} className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow group">
+              <motion.div
+                className="inline-flex items-center justify-center w-12 h-12 bg-health-primary/10 rounded-lg mb-4"
+                whileHover={{ scale: 1.1, rotate: -5 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 10 }}
+              >
+                <GraduationCap className="text-health-primary" size={24} />
+              </motion.div>
               <h3 className="text-2xl font-bold text-health-primary mb-4">For Universities</h3>
               <p className="text-navy-900 leading-relaxed">
                 We bridge the gap between academic theory and market-ready clinical leadership, helping

@@ -30,11 +30,41 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-block px-8 py-3 bg-health-primary text-white font-semibold rounded-lg hover:bg-teal-600 transition-colors duration-300 cursor-pointer;
+    @apply inline-block px-8 py-3 bg-health-primary text-white font-semibold rounded-full hover:bg-teal-600 transition-colors duration-300 cursor-pointer shadow-lg hover:shadow-xl hover:shadow-health-primary/50;
   }
 
   .btn-secondary {
-    @apply inline-block px-8 py-3 border-2 border-health-primary text-health-primary font-semibold rounded-lg hover:bg-health-primary hover:text-white transition-all duration-300 cursor-pointer;
+    @apply inline-block px-8 py-3 border-2 border-health-primary text-health-primary font-semibold rounded-full hover:bg-health-primary hover:text-white transition-all duration-300 cursor-pointer;
+  }
+
+  .btn-primary:hover {
+    @apply scale-105 transform;
+  }
+
+  .btn-secondary:hover {
+    @apply scale-105 transform;
+  }
+
+  /* Animated link underline effect */
+  .link-underline {
+    @apply relative text-health-primary transition-colors duration-300;
+    background: linear-gradient(to right, currentColor, currentColor) bottom no-repeat;
+    background-size: 0% 2px;
+    background-position: 0 calc(1em);
+  }
+
+  .link-underline:hover {
+    @apply text-health-secondary;
+    background-size: 100% 2px;
+  }
+
+  /* Animated icon link */
+  .link-icon {
+    @apply inline-flex items-center gap-2 text-health-primary transition-all duration-300;
+  }
+
+  .link-icon:hover svg {
+    @apply translate-x-1;
   }
 
   .section {
@@ -47,5 +77,16 @@
 
   .section-header {
     @apply text-3xl md:text-4xl font-bold mb-6 text-health-primary;
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+@layer utilities {
+  .smooth-transition {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .button-glow {
+    @apply shadow-lg shadow-health-primary/50 hover:shadow-xl hover:shadow-health-primary/70;
   }
 }

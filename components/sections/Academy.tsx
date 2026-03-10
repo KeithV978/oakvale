@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { Rocket } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export default function Academy() {
@@ -67,9 +68,12 @@ export default function Academy() {
               href="https://academy.oakvale.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-10 py-4 bg-white text-health-primary font-bold rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center gap-2 px-10 py-4 bg-health-secondary text-white font-bold rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
             >
               Go to Oakvale Academy
+              <motion.div whileHover={{ rotate: 45, x: 4 }} transition={{ type: 'spring', stiffness: 300 }}>
+                <Rocket size={20} />
+              </motion.div>
             </Link>
           </motion.div>
         </motion.div>

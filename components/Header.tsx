@@ -1,9 +1,8 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import logo from '@/public/oakvale-white.svg';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 // import Image from 'next/image';
 
 export default function Header() {
@@ -15,23 +14,26 @@ export default function Header() {
       setIsScrolled(window.scrollY > 10);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'Solutions', href: '/solutions' },
-    { label: 'Case Studies', href: '/case-studies' },
-    { label: 'Partner', href: '/partnership' },
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
+    // { label: 'Solutions', href: '/solutions' },
+    // { label: 'Case Studies', href: '/case-studies' },
+    // { label: 'Partner', href: '/partnership' },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-health-primary backdrop-blur-lg shadow-lg'
-          : 'bg-transparent shadow-lg'
+          ? "bg-health-primary backdrop-blur-lg shadow-lg"
+          : "bg-transparent shadow-lg"
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 md:px-8">
@@ -42,8 +44,12 @@ export default function Header() {
               whileHover={{ scale: 1.05 }}
               className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-health-primary to-teal-600 bg-clip-text text-transparent"
             >
-             <img src={logo.src} alt="Oakvale Logo" className="h-8 w-auto" />
-            </motion.div> 
+              <img
+                src={isScrolled ? "/oakvale-white.svg" : "/oakvale-white.png"}
+                alt="Oakvale Logo"
+                className={isScrolled ? "h-8 w-auto" : "h-32 w-auto"}
+              />
+            </motion.div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -53,10 +59,10 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 className={`text-navy-900 font-medium hover:text-health-primary transition-colors duration-300 relative group ${
-        isScrolled
-          ? 'text-white hover:text-white'
-          : 'text-navy-900 hover:text-health-primary'
-      }`}
+                  isScrolled
+                    ? "text-white hover:text-white"
+                    : "text-navy-900 hover:text-health-primary"
+                }`}
               >
                 {link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-1 bg-health-primary group-hover:w-full transition-all duration-300 rounded-full" />
@@ -66,12 +72,15 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
-            <Link href="/partnership" className={`btn-primary text-sm py-2 px-6 ${
-        isScrolled
-          ? 'bg-health-secondary hover:bg-health-secondary/90 text-white'
-          : 'bg-health-primary'
-      }`}>
-              Get Started
+            <Link
+              href="/partnership"
+              className={`btn-primary text-sm py-2 px-6 ${
+                isScrolled
+                  ? "bg-health-secondary hover:bg-health-secondary/90 text-white"
+                  : "bg-health-primary"
+              }`}
+            >
+              Sign In
             </Link>
           </div>
 
@@ -98,7 +107,9 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         <motion.nav
-          animate={isOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
+          animate={
+            isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }
+          }
           transition={{ duration: 0.3 }}
           className="md:hidden overflow-hidden border-t border-gray-200 bg-white"
         >
@@ -118,7 +129,7 @@ export default function Header() {
               onClick={() => setIsOpen(false)}
               className="btn-primary text-center text-sm py-3"
             >
-              Get Started
+              Sign In
             </Link>
           </div>
         </motion.nav>
