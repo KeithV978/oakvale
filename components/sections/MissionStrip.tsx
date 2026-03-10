@@ -73,7 +73,7 @@ export default function MissionStrip() {
                     className="flex items-start gap-4"
                 > 
                     <h2 className="w-full text-4xl md:text-5xl font-bold text-navy-900 mb-8 leading-tight">
-                        Changing lives, communities, organisations through <MissionCyclingText isInView={isInView} />
+                        Changing lives, communities, organisations through <br/> <MissionCyclingText isInView={isInView} />
                     </h2>
                 </motion.div>
 
